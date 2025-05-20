@@ -20,6 +20,9 @@ Aplikasi ini adalah sistem login dan manajemen data sederhana berbasis PHP + MyS
 - Pilih Ubuntu : `Ubuntu`
 - Pilih Instance Type: `t2.micro/t2.nano` (gratis)
 - Buat Key Pair / gunakan yang sudah ada
+- Select existing security group
+- Pilih SG yang sudah kalian buat sebelumnnya
+- Scroll ke bawah sampai menemukan 'Advanced details'
 
 ### 2. Tambahkan UserData
 
