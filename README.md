@@ -30,9 +30,9 @@ Saat setup EC2, buka **Advanced Details > UserData**, dan masukkan script beriku
 sudo apt update -y
 sudo apt install -y apache2 php php-mysql libapache2-mod-php mysql-client
 sudo rm -rf /var/www/html/{*,.*}
-sudo git clone https://github.com/paknux/crudsiswa.git /var/www/html
+sudo git clone https://github.com/Fayakun1/psat2425.git /var/www/html
 sudo chmod -R 777 /var/www/html
 echo DB_USER=admin > /var/www/html/.env
 echo DB_PASS=P4ssw0rd  >> /var/www/html/.env
 echo DB_NAME=psat2425  >> /var/www/html/.env
-echo DB_HOST=rdsxitjkt1.c1ltei3m5gn3.us-east-1.rds.amazonaws.com >> /var/www/html/.env
+echo DB_HOST=psat2425.c1ltei3m5gn3.us-east-1.rds.amazonaws.com >> /var/www/html/.env
