@@ -28,7 +28,6 @@ Aplikasi ini adalah sistem login dan manajemen data sederhana berbasis PHP + MyS
 
 Saat setup EC2, buka **Advanced Details > UserData**, dan masukkan script berikut:
 
-```bash
 #!/bin/bash
 sudo apt update -y
 sudo apt install -y apache2 php php-mysql libapache2-mod-php mysql-client
@@ -40,10 +39,12 @@ echo DB_PASS=P4ssw0rd  >> /var/www/html/.env
 echo DB_NAME=psat2425  >> /var/www/html/.env
 echo DB_HOST=psat2425.c1ltei3m5gn3.us-east-1.rds.amazonaws.com >> /var/www/html/.env
 
-### 3. Jalankan
-Jalankan dengan username dan password default berikut ini
+ ### 3. JALANKAN APLIKASI
+🔑 Login menggunakan username dan password default berikut:
 
-username = admin
-password = 123
-Kemudian inputkanlah data sesuai dengan datamu
+Username: admin
+
+Password: 123
+
+📥 Setelah login, masukkan data sesuai kebutuhan dan simpan.
 
