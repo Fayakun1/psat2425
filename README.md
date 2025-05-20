@@ -39,6 +39,7 @@ echo DB_PASS=P4ssw0rd  >> /var/www/html/.env
 echo DB_NAME=psat2425  >> /var/www/html/.env
 echo DB_HOST=psat2425.c1ltei3m5gn3.us-east-1.rds.amazonaws.com >> /var/www/html/.env
 
+
  ### 3. JALANKAN APLIKASI
 🔑 Login menggunakan username dan password default berikut:
 
