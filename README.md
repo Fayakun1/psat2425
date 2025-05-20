@@ -1,49 +1,38 @@
-# Penilaian Sumatif Akhir Tahun
-## Mapil DevOps XI TJKT 1 - Penilaian Praktek
-### SMKN 1 Banyumas - TA. 2024 2025
+# PSAT2425 - Aplikasi CRUD PHP
 
+Aplikasi ini adalah sistem login dan manajemen data sederhana berbasis PHP + MySQL.
 
-#
-# Cara mendeploy Aplikasi
+## 🚀 Fitur
 
-## 1. Buat File .env
+- Login / Logout
+- CRUD data
+- Antarmuka mode gelap (dark mode)
+- Dapat dideploy otomatis via UserData di AWS
 
-File .env adalah file environment sistem mirip seperti file konfig.php
-#
-isi file .env sebagai berikut
+---
 
-```.env
-DB_USER=....  (isi dengan user RDS)
-DB_PASS=....  (isi dengan password RDS)
-DB_NAME=....  (isi dengan nama database yang akan dibuat di RDS)
-DB_HOST=....  (isi dengan Endpoint RDS)
-```
+## 🛠️ Cara Deploy ke AWS EC2 dengan UserData
 
-contoh:
+### 1. Buat EC2 Instance
 
-```.env
-DB_USER=admin
-DB_PASS=P4ssw0rd123
-DB_NAME=psat2425
-DB_HOST=rdsku.czt6n8ylfvyb.us-east-1.rds.amazonaws.com
-```
+- Masuk ke [AWS Console](https://console.aws.amazon.com/)
+- Pilih **Launch Instance**
+- Pilih Ubuntu : `Ubuntu`
+- Pilih Instance Type: `t2.micro/t2.nano` (gratis)
+- Buat Key Pair / gunakan yang sudah ada
 
-## 2. Jalankan 
-Jalankan dengan username dan password default berikut ini
-#
-### username = admin
-### password = 123
-#
+### 2. Tambahkan UserData
 
-Kemudian inputkanlah data sesuai dengan datamu
+Saat setup EC2, buka **Advanced Details > UserData**, dan masukkan script berikut:
 
-
-#
-# Pengumpulan Hasil
-Catat Link repositry anda
-
-Screenshoot halaman Data Siswa (dashboard.php) yang sudah ada namamu
-
-Kumpulkan ke Form yang ada di dalam GC 
-
-#
+```bash
+#!/bin/bash
+sudo apt update -y
+sudo apt install -y apache2 php php-mysql libapache2-mod-php mysql-client
+sudo rm -rf /var/www/html/{*,.*}
+sudo git clone https://github.com/paknux/crudsiswa.git /var/www/html
+sudo chmod -R 777 /var/www/html
+echo DB_USER=admin > /var/www/html/.env
+echo DB_PASS=P4ssw0rd  >> /var/www/html/.env
+echo DB_NAME=psat2425  >> /var/www/html/.env
+echo DB_HOST=rdsxitjkt1.c1ltei3m5gn3.us-east-1.rds.amazonaws.com >> /var/www/html/.env
